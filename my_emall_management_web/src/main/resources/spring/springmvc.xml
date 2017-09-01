@@ -10,6 +10,10 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
 	<context:component-scan base-package="cn.suxin.controller" />
+	
+	<!-- 加载controller需要的配置信息 -->
+    <context:property-placeholder location="classpath:/resource/url.properties" />
+	
 	<mvc:annotation-driven />
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -17,6 +21,9 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
+	<!--文件上传解析器 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
 	
 	<!-- 配置资源映射 放行资源-->
 	<mvc:resources location="/css/" mapping="/css/**"/>
@@ -27,5 +34,7 @@
 	<dubbo:registry protocol="zookeeper" address="192.168.157.128:2181"/>	
 	<dubbo:reference interface="cn.suxin.service.ItemService" id="itemService" />
 	<dubbo:reference interface="cn.suxin.service.ItemCatService" id="itemCatService" />
+	<dubbo:reference interface="cn.suxin.service.ContentCatService" id="contentCatService" />
+	<dubbo:reference interface="cn.suxin.service.ContentService" id="contentServiceImpl" />
 	
 </beans>

@@ -19,20 +19,10 @@
 			<artifactId>my_emall_management_interface</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		<!-- JSP相关 -->
 		<dependency>
-			<groupId>jstl</groupId>
-			<artifactId>jstl</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jsp-api</artifactId>
-			<scope>provided</scope>
+			<groupId>cn.suxin</groupId>
+			<artifactId>my_emall_content_interface</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		
 		<!-- Spring -->
@@ -119,6 +109,13 @@
 			<groupId>com.github.sgroschupf</groupId>
 			<artifactId>zkclient</artifactId>
 		</dependency>
+		
+		<dependency>
+				<groupId>fastdfs_client</groupId>
+  				<artifactId>fastdfs_client</artifactId>
+  				<version>1.25</version>
+		</dependency>
+		
 	</dependencies>
 	
 	<build>
